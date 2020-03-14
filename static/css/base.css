@@ -28,3 +28,10 @@
     height: 5vh;
     border-radius: 50%;
 }
+.profile {
+    text-align: center
+}
+.profile img {
+    width: 15%;
+    border-radius: 50%;
+}

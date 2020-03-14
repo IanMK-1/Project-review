@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <div class="profile">
+                    <img src="{{user_profile.profile_pic.url}}" alt="loading...">
+                    <p><b>{{user_profile.user.username}}</b></p>
+                    <p>{{user_profile.bio}}</p>
+                    <p>Contact info: </p>
+                    <p>Tel no: {{user_profile.phone_no}}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
