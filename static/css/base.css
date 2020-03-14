@@ -24,7 +24,7 @@
     height: 40vh;
     margin-bottom: 10px;
 }
-#user-profile-pic {
+.user-profile-pic {
     width: 10%;
     height: 5vh;
     border-radius: 50%;
@@ -35,4 +35,7 @@
 }
 .info {
     text-align: center;
+}
+#profile-icon {
+    height: 5vh;
 }
