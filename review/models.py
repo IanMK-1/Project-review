@@ -17,3 +17,11 @@ class Project(models.Model):
     description = models.TextField()
     live_link = models.CharField(max_length=50)
     user_project = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Rating(models.Model):
+    design = models.PositiveIntegerField(max_length=10)
+    usability = models.PositiveIntegerField(max_length=10)
+    content = models.PositiveIntegerField(max_length=10)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    user_rating = models.OneToOneField(User, on_delete=models.CASCADE)
