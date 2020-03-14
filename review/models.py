@@ -48,6 +48,36 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    def save_project(self):
+        self.save()
+
+    def delete_project(self):
+        self.delete()
+
+    @classmethod
+    def update_project_title(cls, id, new_title):
+        cls.objects.filter(id=id).update(title=new_title)
+        updated_title = cls.objects.get(id=id)
+        return updated_title
+
+    @classmethod
+    def update_project_description(cls, id, new_description):
+        cls.objects.filter(id=id).update(description=new_description)
+        updated_project_description = cls.objects.get(id=id)
+        return updated_project_description
+
+    @classmethod
+    def update_project_image(cls, id, new_image):
+        cls.objects.filter(id=id).update(image=new_image)
+        updated_project_image = cls.objects.get(id=id)
+        return updated_project_image
+
+    @classmethod
+    def update_project_live_link(cls, id, new_live_link):
+        cls.objects.filter(id=id).update(live_link=new_live_link)
+        updated_project_live_link = cls.objects.get(id=id)
+        return updated_project_live_link
+
 
 class Rating(models.Model):
     design = models.PositiveIntegerField(max_length=10)
