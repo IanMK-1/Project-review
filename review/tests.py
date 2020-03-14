@@ -34,3 +34,18 @@ class ProfileClassTest(TestCase):
         self.new_profile.delete_profile()
         profiles = Profile.objects.all()
         self.assertTrue(len(profiles) == 0)
+
+    def test_update_bio(self):
+        self.new_profile.save_profile()
+        updated_profile = Profile.update_bio(self.new_profile.id, 'bye')
+        self.assertEqual(updated_profile.bio, 'bye')
+
+    def test_update_phone_no(self):
+        self.new_profile.save_profile()
+        updated_profile = Profile.update_phone_no(self.new_profile.id, '0777889944')
+        self.assertEqual(updated_profile.phone_no, '0777889944')
+
+    def test_update_profile_pic(self):
+        self.new_profile.save_profile()
+        updated_profile = Profile.update_profile_pic(self.new_profile.id, 'gp.jpg')
+        self.assertTrue(updated_profile.profile_pic != self.new_profile.profile_pic)
