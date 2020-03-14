@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import cloudinary
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,8 +29,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+cloudinary.config(
+    cloud_name="dg9gqlrva",
+    api_key="957948429853469",
+    api_secret="XvUp2xjKj8RWOJH8t23EjkCbce4"
+)
+
 INSTALLED_APPS = [
     'review',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
