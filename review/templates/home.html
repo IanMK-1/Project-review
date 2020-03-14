@@ -2,5 +2,24 @@
 {% load bootstrap3 %}
 
 {% block content %}
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="projects">
+                {% if all_projects %}
+                    {% for project in all_projects %}
+                        <div class="col-md-4">
+                            <span id="project-image"><img src="{{project.image.url}}" alt="loading..."></span>
+                            <p><b>{{project.title}}</b></p>
+                            <p>Posted {{project.posted_on|timesince}} ago</p>
+                            <hr>
+                            <span><img src="{{project.}}" alt="loading..."></span>
+                            <p>By {{project.user_project.username}}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No projects available yet</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
