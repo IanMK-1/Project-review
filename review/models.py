@@ -11,3 +11,9 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 
+class Project(models.Model):
+    title = models.CharField(max_length=30)
+    image = CloudinaryField('image')
+    description = models.TextField()
+    live_link = models.CharField(max_length=50)
+    user_project = models.ForeignKey(User, on_delete=models.CASCADE)
