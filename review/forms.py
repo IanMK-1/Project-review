@@ -6,3 +6,9 @@ class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['profile_pic', 'bio', 'phone_no']
+
+
+class AddProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['title', 'image', 'description', 'live_link']

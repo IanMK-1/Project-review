@@ -8,18 +8,22 @@
             <div class="projects">
                 {% if all_projects %}
                     {% for project in all_projects %}
-                        <div class="col-md-4" id="project-specs">
-                            <img id="project-image" src="{{project.image.url}}" alt="loading...">
-                            <p><b>{{project.title}}</b></p>
-                            <p><b>Live link:</b> &nbsp; <a href="{{project.live_link}}" target="_blank">{{project.live_link}}</a> </p>
-                            <p>Posted {{project.posted_on|timesince}} ago</p>
-                            <hr>
-                            {% if project.user_profile.profile_pic.url %}
-                                <img class="user-profile-pic" src="{{project.user_profile.profile_pic.url}}" alt="loading..."> &nbsp;
-                            {% else %}
-                                <img class="user-profile-pic" src="{% static 'images/user.png' %}" alt="loading..."> &nbsp;
-                            {% endif %}
-                            <b>By {{project.user_project.username}}</b>
+                        <div class="col-md-4">
+                            <div id="project-specs">
+                                <img id="project-image" src="{{project.image.url}}" alt="loading...">
+                                <div class="details">
+                                    <p><b>{{project.title}}</b></p>
+                                    <p><b>Live link:</b> &nbsp; <a href="{{project.live_link}}" target="_blank">{{project.live_link}}</a> </p>
+                                    <p>Posted {{project.posted_on|timesince}} ago</p>
+                                    <hr>
+                                    {% if project.user_profile.profile_pic.url %}
+                                        <img class="user-profile-pic" src="{{project.user_profile.profile_pic.url}}" alt="loading..."> &nbsp;
+                                    {% else %}
+                                        <img class="user-profile-pic" src="{% static 'images/user.png' %}" alt="loading..."> &nbsp;
+                                    {% endif %}
+                                    <b>By {{project.user_project.username}}</b>
+                                </div>
+                            </div>
                         </div>
                     {% endfor %}
                 {% else %}

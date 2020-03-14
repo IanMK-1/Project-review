@@ -15,7 +15,6 @@
 }
 #project-specs {
     background-color: rgb(211, 218, 211);
-    padding-top: 15px;
     padding-bottom: 15px;
     margin-bottom: 15px;
 }
@@ -38,4 +37,7 @@
 }
 #profile-icon {
     height: 5vh;
+}
+.details {
+    margin-left: 10px;
 }

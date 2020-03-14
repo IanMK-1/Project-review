@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Profile, Project, Rating
-from .forms import EditProfileForm
+from .forms import EditProfileForm, AddProjectForm
 import cloudinary.uploader
 
 
@@ -48,3 +48,25 @@ def edit_profile(request):
         form = EditProfileForm()
 
     return render(request, 'edit_profile.html', {"form": form})
+
+
+@login_required(login_url='/accounts/login/')
+def add_project(request):
+    current_user = request.user
+    if request.method == "POST":
+        form = AddProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.cleaned_data['image']
+            title = form.cleaned_data['title']
+            description = form.cleaned_data['description']
+            live_link = form.cleaned_data['live_link']
+            user_profile = Profile.objects.get(user=current_user)
+            project = Project(title=title, image=image, description=description, live_link=live_link, user_project=current_user,
+                              user_profile=user_profile)
+            project.save_project()
+
+            return redirect('Profile')
+    else:
+        form = AddProjectForm()
+
+    return render(request, 'add_project.html', {"form": form})
