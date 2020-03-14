@@ -19,3 +19,18 @@ class ProfileClassTest(TestCase):
     def tearDown(self) -> None:
         User.objects.all().delete()
         Profile.objects.all().delete()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_profile, Profile))
+        self.assertTrue(isinstance(self.new_user, User))
+
+    def test_save_profile_method(self):
+        self.new_profile.save_profile()
+        profiles = Profile.objects.all()
+        self.assertTrue(len(profiles) > 0)
+
+    def test_delete_profile(self):
+        self.new_profile.save_profile()
+        self.new_profile.delete_profile()
+        profiles = Profile.objects.all()
+        self.assertTrue(len(profiles) == 0)
