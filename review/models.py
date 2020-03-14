@@ -44,6 +44,7 @@ class Project(models.Model):
     image = CloudinaryField('image')
     description = models.TextField()
     live_link = models.CharField(max_length=50)
+    posted_on = models.DateTimeField(auto_now_add=True)
     user_project = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
