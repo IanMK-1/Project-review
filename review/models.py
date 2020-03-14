@@ -25,6 +25,13 @@ class Profile(models.Model):
         updated_bio = cls.objects.get(id=id)
         return updated_bio
 
+    @classmethod
+    def update_phone_no(cls, id, new_phone_no):
+        cls.objects.filter(id=id).update(phone_no=new_phone_no)
+        updated_phone_no = cls.objects.get(id=id)
+        return updated_phone_no
+
+
 class Project(models.Model):
     title = models.CharField(max_length=30)
     image = CloudinaryField('image')
