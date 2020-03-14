@@ -12,8 +12,12 @@
                             <p><b>{{project.title}}</b></p>
                             <p>Posted {{project.posted_on|timesince}} ago</p>
                             <hr>
-                            <span><img src="{{project.}}" alt="loading..."></span>
-                            <p>By {{project.user_project.username}}</p>
+                            {% if project.user_profile.profile_pic.url %}
+                                <span id="user-profile-pic"><img src="{{project.user_profile.profile_pic.url}}" alt="loading..."></span> &nbsp;
+                            {% else %}
+                                <span id="icon"><i class='lni lni-emoji-smile'></i></span>
+                            {% endif %}
+                            <b>By {{project.user_project.username}}</b>
                         </div>
                     {% endfor %}
                 {% else %}
