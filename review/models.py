@@ -21,21 +21,21 @@ class Profile(models.Model):
         self.delete()
 
     @classmethod
-    def update_bio(cls, id, new_bio):
-        cls.objects.filter(id=id).update(bio=new_bio)
-        updated_bio = cls.objects.get(id=id)
+    def update_bio(cls, user, new_bio):
+        cls.objects.filter(user=user).update(bio=new_bio)
+        updated_bio = cls.objects.get(user=user)
         return updated_bio
 
     @classmethod
-    def update_phone_no(cls, id, new_phone_no):
-        cls.objects.filter(id=id).update(phone_no=new_phone_no)
-        updated_phone_no = cls.objects.get(id=id)
+    def update_phone_no(cls, user, new_phone_no):
+        cls.objects.filter(user=user).update(phone_no=new_phone_no)
+        updated_phone_no = cls.objects.get(user=user)
         return updated_phone_no
 
     @classmethod
-    def update_profile_pic(cls, id, new_profile_pic):
-        cls.objects.filter(id=id).update(profile_pic=new_profile_pic)
-        updated_profile_pic = cls.objects.get(id=id)
+    def update_profile_pic(cls, user, new_profile_pic):
+        cls.objects.filter(user=user).update(profile_pic=new_profile_pic)
+        updated_profile_pic = cls.objects.get(user=user)
         return updated_profile_pic
 
 
@@ -99,19 +99,19 @@ class Rating(models.Model):
         self.delete()
 
     @classmethod
-    def update_design_rating(cls, id, new_design_rating):
-        cls.objects.filter(id=id).update(design=new_design_rating)
-        updated_design_rating = cls.objects.get(id=id)
+    def update_design_rating(cls, project, new_design_rating):
+        cls.objects.filter(project=project).update(design=new_design_rating)
+        updated_design_rating = cls.objects.get(project=project)
         return updated_design_rating
 
     @classmethod
-    def update_usability_rating(cls, id, new_usability_rating):
-        cls.objects.filter(id=id).update(usability=new_usability_rating)
-        updated_usability_rating = cls.objects.get(id=id)
+    def update_usability_rating(cls, project, new_usability_rating):
+        cls.objects.filter(project=project).update(usability=new_usability_rating)
+        updated_usability_rating = cls.objects.get(project=project)
         return updated_usability_rating
 
     @classmethod
-    def update_content_rating(cls, id, new_content_rating):
-        cls.objects.filter(id=id).update(content=new_content_rating)
-        updated_content_rating = cls.objects.get(id=id)
+    def update_content_rating(cls, project, new_content_rating):
+        cls.objects.filter(project=project).update(content=new_content_rating)
+        updated_content_rating = cls.objects.get(project=project)
         return updated_content_rating

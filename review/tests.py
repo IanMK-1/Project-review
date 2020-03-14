@@ -37,17 +37,17 @@ class ProfileClassTest(TestCase):
 
     def test_update_bio(self):
         self.new_profile.save_profile()
-        updated_profile = Profile.update_bio(self.new_profile.id, 'bye')
+        updated_profile = Profile.update_bio(self.new_user, 'bye')
         self.assertEqual(updated_profile.bio, 'bye')
 
     def test_update_phone_no(self):
         self.new_profile.save_profile()
-        updated_profile = Profile.update_phone_no(self.new_profile.id, '0777889944')
+        updated_profile = Profile.update_phone_no(self.new_user, '0777889944')
         self.assertEqual(updated_profile.phone_no, '0777889944')
 
     def test_update_profile_pic(self):
         self.new_profile.save_profile()
-        updated_profile = Profile.update_profile_pic(self.new_profile.id, 'gp.jpg')
+        updated_profile = Profile.update_profile_pic(self.new_user, 'gp.jpg')
         self.assertTrue(updated_profile.profile_pic != self.new_profile.profile_pic)
 
 
@@ -66,7 +66,7 @@ class ProjectClassTest(TestCase):
         # creating a new project and saving it
         self.new_project = Project(title='instagram', image='insta.jpg', description='instagram app',
                                    live_link='instagram.com',
-                                   user_project=self.new_user)
+                                   user_project=self.new_user, user_profile=self.new_profile)
         self.new_project.save()
 
     def tearDown(self) -> None:
@@ -125,7 +125,7 @@ class RatingTestClass(TestCase):
         # creating a new project and saving it
         self.new_project = Project(title='instagram', image='insta.jpg', description='instagram app',
                                    live_link='instagram.com',
-                                   user_project=self.new_user)
+                                   user_project=self.new_user, user_profile=self.new_profile)
         self.new_project.save()
 
         # creating a new rating for project and saving it
@@ -157,15 +157,15 @@ class RatingTestClass(TestCase):
 
     def test_update_design_rating(self):
         self.new_rating.save_rating()
-        updated_rating = Rating.update_design_rating(self.new_rating.id, 5)
+        updated_rating = Rating.update_design_rating(self.new_project, 5)
         self.assertEqual(updated_rating.design, 5)
 
     def test_update_usability_rating(self):
         self.new_rating.save_rating()
-        updated_rating = Rating.update_usability_rating(self.new_rating.id, 9)
+        updated_rating = Rating.update_usability_rating(self.new_project, 9)
         self.assertEqual(updated_rating.usability, 9)
 
     def test_update_content_rating(self):
         self.new_rating.save_rating()
-        updated_rating = Rating.update_content_rating(self.new_rating.id, 2)
+        updated_rating = Rating.update_content_rating(self.new_project, 2)
         self.assertEqual(updated_rating.content, 2)

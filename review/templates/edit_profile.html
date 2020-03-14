@@ -3,5 +3,17 @@
 {% load static %}
 
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 style="text-align: center">Edit Profile</h3>
+                <form  action="{%url 'Editprofile'%}" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
 
+                    {% bootstrap_form form %}
+                    <input type="submit" class="btn btn-success btn-lg" value="Post">
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
