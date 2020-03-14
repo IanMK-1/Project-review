@@ -88,3 +88,27 @@ class Rating(models.Model):
 
     def __str__(self):
         return self.design
+
+    def save_rating(self):
+        self.save()
+
+    def delete_rating(self):
+        self.delete()
+
+    @classmethod
+    def update_design_rating(cls, id, new_design_rating):
+        cls.objects.filter(id=id).update(design=new_design_rating)
+        updated_design_rating = cls.objects.get(id=id)
+        return updated_design_rating
+
+    @classmethod
+    def update_usability_rating(cls, id, new_usability_rating):
+        cls.objects.filter(id=id).update(usability=new_usability_rating)
+        updated_usability_rating = cls.objects.get(id=id)
+        return updated_usability_rating
+
+    @classmethod
+    def update_content_rating(cls, id, new_content_rating):
+        cls.objects.filter(id=id).update(content=new_content_rating)
+        updated_content_rating = cls.objects.get(id=id)
+        return updated_content_rating
