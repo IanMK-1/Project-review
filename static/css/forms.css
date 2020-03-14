@@ -1,0 +1,38 @@
+body {
+    background-image: url('/static/images/home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+.container {
+    font-family: 'Cabin', sans-serif;
+}
+.logo {
+    background-color: white;
+    padding: 15px;
+    margin-top: 30%;
+    border-radius: 3%;
+}
+.logo h3 {
+    font-family: 'Lobster', cursive;
+    font-size: 6vh;
+}
+.logo .card-heading p {
+    font-size: 10vh;
+}
+.registration {
+    background-color: white;
+    padding: 15px;
+    margin-top: 5%;
+    border-radius: 3%;
+}
+.registration h3 {
+    font-family: 'Lobster', cursive;
+    font-size: 6vh;
+}
+.jumbotron {
+    margin-top: 15%;
+    text-align: center;
+    background-color: white;
+}
