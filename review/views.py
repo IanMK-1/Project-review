@@ -70,3 +70,8 @@ def add_project(request):
         form = AddProjectForm()
 
     return render(request, 'add_project.html', {"form": form})
+
+
+@login_required(login_url='/accounts/login/')
+def project_details(request, id):
+    return render(request, 'project.html')

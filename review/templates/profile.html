@@ -49,7 +49,7 @@
                     {% for project in user_projects %}
                         <div class="col-md-4">
                             <div id="project-specs">
-                                <img id="project-image" src="{{project.image.url}}" alt="loading...">
+                                <div class="spec-image"><a href="{% url 'Project' project.id %}"><img id="project-image" src="{{project.image.url}}" alt="loading..."></a></div>
                                 <div class="details">
                                     <p><b>{{project.title}}</b></p>
                                     <p><b>Live link:</b> &nbsp; <a href="{{project.live_link}}" target="_blank">{{project.live_link}}</a> </p>
