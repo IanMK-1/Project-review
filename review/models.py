@@ -83,11 +83,11 @@ class Project(models.Model):
 
 
 class Rating(models.Model):
-    design = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
-    usability = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
-    content = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    design = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)], null=True)
+    usability = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)], null=True)
+    content = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)], null=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    user_rating = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_rating = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __int__(self):
         return self.design

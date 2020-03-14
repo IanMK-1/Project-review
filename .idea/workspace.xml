@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8545775-781d-473b-a05c-bfe61baf0457" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/review/migrations/0002_auto_20200315_0042.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/review/migrations/0003_auto_20200315_0044.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/review/migrations/0004_auto_20200315_0058.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/review/migrations/0005_auto_20200315_0237.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/review/migrations/0006_auto_20200315_0239.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/review/migrations/0007_auto_20200315_0239.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/review/migrations/0008_auto_20200315_0244.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/review/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/review/templates/project.html" beforeDir="false" afterPath="$PROJECT_DIR$/review/templates/project.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review/templates/rating.html" beforeDir="false" afterPath="$PROJECT_DIR$/review/templates/rating.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/review/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

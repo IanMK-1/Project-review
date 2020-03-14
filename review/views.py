@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Profile, Project, Rating
-from .forms import EditProfileForm, AddProjectForm
+from .forms import EditProfileForm, AddProjectForm, RateProjectForm
 import cloudinary.uploader
 
 
@@ -91,3 +91,24 @@ def project_details(request, id):
     value = round(overall_average, 2)
     return render(request, 'project.html', {"project": project, "ratings": ratings, "overall_avg": value,
                                             "user_avg": user_avg})
+
+
+@login_required(login_url='/accounts/login/')
+def rate_project(request):
+    current_user = request.user
+    if request.method == "POST":
+        form = RateProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            design = form.cleaned_data['design']
+            usability = form.cleaned_data['usability']
+            content = form.cleaned_data['content']
+            project = form.cleaned_data['project']
+            user_rating = Rating(design=design, usability=usability, content=content, project=project,
+                                 user_rating=current_user)
+            user_rating.save()
+
+            return redirect('Home')
+    else:
+        form = RateProjectForm()
+
+    return render(request, 'rating.html', {"form": form})

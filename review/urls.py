@@ -8,5 +8,6 @@ urlpatterns = [
     path('profile/', views.profile, name='Profile'),
     path('edit_profile/', views.edit_profile, name='Editprofile'),
     path('add_project/', views.add_project, name="Addproject"),
-    re_path('project/(\d+)', views.project_details, name="Project"),
+    re_path('project/(\d+)/', views.project_details, name="Project"),
+    path('rate_project/', views.rate_project, name="Rateproject"),
 ]
