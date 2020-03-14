@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 # Create your models here.
@@ -80,9 +81,9 @@ class Project(models.Model):
 
 
 class Rating(models.Model):
-    design = models.PositiveIntegerField(max_length=10)
-    usability = models.PositiveIntegerField(max_length=10)
-    content = models.PositiveIntegerField(max_length=10)
+    design = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    usability = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
+    content = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     user_rating = models.OneToOneField(User, on_delete=models.CASCADE)
 
