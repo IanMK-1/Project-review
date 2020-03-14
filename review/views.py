@@ -23,3 +23,7 @@ def profile(request):
         user_projects = Project.objects.filter(user_project=current_user)
 
     return render(request, 'profile.html', {"user_profile": user_profile, "user_projects": user_projects})
+
+
+def edit_profile(request):
+    return render(request, 'edit_profile.html')
