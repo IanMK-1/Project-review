@@ -89,7 +89,7 @@ class Rating(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     user_rating = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    def __str__(self):
+    def __int__(self):
         return self.design
 
     def save_rating(self):

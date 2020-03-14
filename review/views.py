@@ -61,7 +61,8 @@ def add_project(request):
             description = form.cleaned_data['description']
             live_link = form.cleaned_data['live_link']
             user_profile = Profile.objects.get(user=current_user)
-            project = Project(title=title, image=image, description=description, live_link=live_link, user_project=current_user,
+            project = Project(title=title, image=image, description=description, live_link=live_link,
+                              user_project=current_user,
                               user_profile=user_profile)
             project.save_project()
 
@@ -74,4 +75,19 @@ def add_project(request):
 
 @login_required(login_url='/accounts/login/')
 def project_details(request, id):
-    return render(request, 'project.html')
+    project = Project.objects.get(id=id)
+    ratings = Rating.objects.filter(project=project).all()
+    count = ratings.count()
+    overall_average = 0
+    user_avg = {}
+    if ratings:
+        average = 0
+        for rating in ratings:
+            average += (rating.design + rating.usability + rating.content) / 3
+            user_avg[rating.id] = round(average, 2)
+
+        overall_average = average / count
+
+    value = round(overall_average, 2)
+    return render(request, 'project.html', {"project": project, "ratings": ratings, "overall_avg": value,
+                                            "user_avg": user_avg})

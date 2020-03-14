@@ -3,5 +3,71 @@
 {% load static %}
 
 {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
 
+            </div>
+            <div class="col-md-8">
+                <div class="proj-image">
+                    <img src="{{project.image.url}}" alt="loading...">
+                    <div class="proj-dets">
+                        <p style="font-size: 3vh;"><b>{{project.title}}</b></p>
+                        <p><b>Live link:</b> &nbsp; <a href="{{project.live_link}}" target="_blank">{{project.live_link}}</a> </p>
+                        <p><b>Description</b></p>
+                        <ul>
+                            <li class="list-group-item">{{project.description}}</li>
+                        </ul>
+                        <p>Posted {{project.posted_on|timesince}} ago</p>
+                        {% if ratings %}
+                            <p style="color: red">Average score of {{overall_avg}}</p>
+                        {% else %}
+                            <p style="color: red">No ratings available</p>
+                        {% endif %}
+                        <hr>
+                        {% if project.user_profile.profile_pic.url %}
+                            <img src="{{project.user_profile.profile_pic.url}}" alt="loading..."> &nbsp;
+                        {% else %}
+                            <img src="{% static 'images/user.png' %}" alt="loading..."> &nbsp;
+                        {% endif %}
+                        <b>By {{project.user_project.username}}</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-8">
+                <h3 style="text-align: center">Ratings</h3>
+                {% if ratings %}
+                    <table id="ratings">
+                        <tr>
+                            <th></th>
+                            <th>Design</th>
+                            <th>Usability</th>
+                            <th>Content</th>
+                        </tr>
+                        {% for rating in ratings %}
+                        <tr>
+                            <td>{{rating.user_rating.username}}</td>
+                            <td>{{rating.design}}</td>
+                            <td>{{rating.usability}}</td>
+                            <td>{{rating.content}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>No ratings available</p>
+                {% endif %}
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+    </div>
 {% endblock %}
