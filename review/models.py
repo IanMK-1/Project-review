@@ -31,6 +31,12 @@ class Profile(models.Model):
         updated_phone_no = cls.objects.get(id=id)
         return updated_phone_no
 
+    @classmethod
+    def update_profile_pic(cls, id, new_profile_pic):
+        cls.objects.filter(id=id).update(profile_pic=new_profile_pic)
+        updated_profile_pic = cls.objects.get(id=id)
+        return updated_profile_pic
+
 
 class Project(models.Model):
     title = models.CharField(max_length=30)
