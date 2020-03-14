@@ -17,6 +17,7 @@
     background-color: rgb(211, 218, 211);
     padding-top: 15px;
     padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 #project-image {
     width: 100%;
@@ -28,10 +29,10 @@
     height: 5vh;
     border-radius: 50%;
 }
-.profile {
-    text-align: center
-}
 .profile img {
-    width: 15%;
-    border-radius: 50%;
+    width: 100%;
+    height: 40vh;
+}
+.info {
+    text-align: center;
 }
