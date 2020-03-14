@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8545775-781d-473b-a05c-bfe61baf0457" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review/templates/django_registration/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/review/templates/django_registration/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/review/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
