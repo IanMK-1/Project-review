@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8545775-781d-473b-a05c-bfe61baf0457" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/review/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/review/serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENCE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +61,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="205" y="31" key="SettingsEditor/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1584231358535" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1584171452883">
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1584260040930">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741/1366.0.1360.768@67.27.1299.741" timestamp="1584171452883" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1584083424525" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1584260040930" />
   </component>
 </project>
