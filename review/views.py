@@ -4,6 +4,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from .models import Profile, Project, Rating
 from .forms import EditProfileForm, AddProjectForm, RateProjectForm
 import cloudinary.uploader
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer, ProjectSerializer
 
 
 # Create your views here.
@@ -124,3 +127,17 @@ def search_project(request):
         searched_project = None
 
     return render(request, 'search_results.html', {"projects": searched_project, "search_item": search_term})
+
+
+class ProfileView(APIView):
+    def get(self, request):
+        profiles = Profile.objects.all()
+        serializer = ProfileSerializer(profiles, many=True)
+        return Response({"profiles": serializer.data})
+
+
+class ProjectView(APIView):
+    def get(self, request):
+        projects = Project.objects.all()
+        serializer = ProjectSerializer(projects, many=True)
+        return Response({"projects": serializer.data})

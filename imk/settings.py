@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'review',
     'cloudinary',
     'bootstrap3',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
