@@ -10,4 +10,5 @@ urlpatterns = [
     path('add_project/', views.add_project, name="Addproject"),
     re_path('project/(\d+)/', views.project_details, name="Project"),
     path('rate_project/', views.rate_project, name="Rateproject"),
+    path('search_results/', views.search_project, name="Searchproject"),
 ]

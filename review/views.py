@@ -112,3 +112,15 @@ def rate_project(request):
         form = RateProjectForm()
 
     return render(request, 'rating.html', {"form": form})
+
+
+def search_project(request):
+    try:
+        if 'search_project' in request.GET and request.GET["search_project"]:
+            search_term = request.GET.get("search_project")
+            searched_project = Project.objects.filter(title__icontains=search_term).all()
+
+    except ObjectDoesNotExist:
+        searched_project = None
+
+    return render(request, 'search_results.html', {"projects": searched_project, "search_item": search_term})
